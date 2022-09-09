@@ -22,7 +22,7 @@
     Условные выражения. [ - синоним команды test, [[ - расширенная версия. Флаг -d "Истинно, если файл существует и является каталогом". Эту конструкцию можно применять в сценариях, где необходима проверка существования директории.   
 
 # 12
-    Дописываем в /etc/environment :/tmp/new_path_directory
+    Дописываем в начало /etc/environment /tmp/new_path_directory:
     source /etc/environment
     ln -s /usr/bin/bash /tmp/new_path_directory/
     ln -s /usr/bin/bash /usr/local/bin/
