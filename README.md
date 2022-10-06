@@ -180,13 +180,13 @@ Paths: (23 available, best #14, table default)
 
 ## 3
 ![](./3.png?raw=true)
-22 порт использует процесс sshd, pid - 593
+22 порт использует процесс sshd, pid - 593 \
 53 порт использует процесс systemd-resolved, pid - 468
 
 ## 4
 
 ![](./4.png?raw=true)
-53 порт использует процесс systemd-resolved, pid - 468
+53 порт использует процесс systemd-resolved, pid - 468 \
 68 порт использует процесс systemd-networkdб pid - 362
 
 ## 5
