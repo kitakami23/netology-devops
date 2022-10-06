@@ -20,9 +20,9 @@
  X-Cache-Hits: 0 \
  X-Timer: S1665074728.523867,VS0,VE0 \
  Strict-Transport-Security: max-age=300 \
- X-DNS-Prefetch-Control: off \
+ X-DNS-Prefetch-Control: off 
 
- Connection closed by foreign host. \
+ Connection closed by foreign host. 
 
 ## 2
 
