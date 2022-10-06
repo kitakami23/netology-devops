@@ -28,4 +28,31 @@
 
 ## 2
 ![](./2.png?raw=true)
-![](./3.png?raw=true)
+![](./2-1.png?raw=true)
+
+## 3
+![](./4.png?raw=true)
+
+## 4
+Hosting Solution Ltd \
+AS14576
+
+## 5
+![](./5.png?raw=true)
+
+AS14576 \
+AS49127 \
+AS15169 
+
+## 6
+
+На стороне Google - в среднем 46мс
+
+## 7
+
+8.8.8.8
+8.8.4.4
+![](./7.png?raw=true)
+
+## 8
+![](./8.png?raw=true)
