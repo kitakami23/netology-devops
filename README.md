@@ -1,6 +1,6 @@
 ## 1
- vagrant@ubnt-netology:~$ telnet stackoverflow.com 80
- Trying 151.101.129.69...
+ vagrant@ubnt-netology:~$ telnet stackoverflow.com 80 \
+ Trying 151.101.129.69... \
  Connected to stackoverflow.com.
  Escape character is '^]'.
  GET /questions HTTP/1.0
