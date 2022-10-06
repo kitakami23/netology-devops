@@ -1,11 +1,11 @@
 ## 1
-Linux \
+Linux
 ```
 ip link 
 ifconfig
 ```
 
-Windows \
+Windows
 ```
 ipconfig
 ```
@@ -16,7 +16,7 @@ ipconfig
 
 ## 3
 Используется технология VLAN \
-Пакет - vlan \
+Пакет - vlan 
 
 ```
 /etc/network/interfaces
