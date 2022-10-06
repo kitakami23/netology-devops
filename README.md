@@ -176,7 +176,7 @@ Paths: (23 available, best #14, table default)
 
 ## 2
 
-
+![](./2.png?raw=true)
 
 ## 3
 ![](./3.png?raw=true)
@@ -190,3 +190,5 @@ Paths: (23 available, best #14, table default)
 68 порт использует процесс systemd-networkdб pid - 362
 
 ## 5
+![](./5.jpg?raw=true)
+
