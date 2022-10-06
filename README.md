@@ -1,62 +1,30 @@
 ## 1
- vagrant@ubnt-netology:~$ telnet stackoverflow.com 80 \
- Trying 151.101.129.69... \
- Connected to stackoverflow.com. \
- Escape character is '^]'. \
- GET /questions HTTP/1.0 \
- HOST: stackoverflow.com 
+Linux \
+ip link \
+ifconfig
 
- HTTP/1.1 301 Moved Permanently \
- Connection: close  
- Content-Length: 0 \
- Server: Varnish \
- Retry-After: 0 \
- Location: https://stackoverflow.com/questions \
- Accept-Ranges: bytes \
- Date: Thu, 06 Oct 2022 16:45:27 GMT \
- Via: 1.1 varnish \
- X-Served-By: cache-ams21040-AMS \
- X-Cache: HIT \
- X-Cache-Hits: 0 \
- X-Timer: S1665074728.523867,VS0,VE0 \
- Strict-Transport-Security: max-age=300 \
- X-DNS-Prefetch-Control: off 
-
- Connection closed by foreign host. 
-
-Код 301 означает, что запрашиваемый был на постоянной основе перемещён в новое месторасположение, и указывает на то, что текущие ссылки, использующие данный URL, должны быть обновлены. Адрес нового месторасположения ресурса указывается в поле Location получаемого в ответ заголовка пакета протокола HTTP
+Windows \
+ipconfig
 
 ## 2
-![](./2.png?raw=true)
-![](./2-1.png?raw=true)
+Используется протокол LLDP \
+Пакет - lldpd, управление - lldpctl
 
 ## 3
-![](./4.png?raw=true)
+Используется технология VLAN \
+Пакет - vlan \
+
+/etc/network/interfaces \
+    auto vlan1400 \
+    iface vlan1400 inet static \
+        address 192.168.1.1 \       
+        netmask 255.255.255.0 \        
+        vlan_raw_device eth0
 
 ## 4
-Hosting Solution Ltd \
-AS14576
+В Linux агрегацию портов можно настроить посредством пакета 'ifenslave'. Пример использования: \
+    mode=0 (balance-rr)  - Последовательно кидает пакеты, с первого по последний интерфейс. \
+    mode=2 (balance-xor) - Передачи распределяются между интерфейсами на основе формулы ((MAC-адрес источника) XOR (MAC-адрес получателя)) % число интерфейсов. Один и тот же интерфейс работает с определённым получателем. Режим даёт балансировку нагрузки и отказоустойчивость. \
+    mode=5 (balance-tlb) - Входящие пакеты принимаются только активным сетевым интерфейсом, исходящий распределяется в зависимости от текущей загрузки каждого интерфейса. Не требует настройки коммутатора. \
+    mode=6 (balance-alb) - Тоже самое что 5, только входящий трафик тоже распределяется между интерфейсами. Не требует настройки коммутатора, но интерфейсы должны уметь изменять MAC. 
 
-## 5
-![](./5.png?raw=true)
-
-AS14576 \
-AS49127 \
-AS15169 
-
-## 6
-
-На стороне Google - в среднем 46мс
-
-## 7
-
-8.8.8.8 \
-8.8.4.4
-
-A-Запись \
-;dns.google.com.			IN	A
-
-![](./7.png?raw=true)
-
-## 8
-![](./8.png?raw=true)
