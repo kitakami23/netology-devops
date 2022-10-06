@@ -4,10 +4,10 @@
  Connected to stackoverflow.com. \
  Escape character is '^]'. \
  GET /questions HTTP/1.0 \
- HOST: stackoverflow.com \
+ HOST: stackoverflow.com 
 
  HTTP/1.1 301 Moved Permanently \
- Connection: close \ 
+ Connection: close  
  Content-Length: 0 \
  Server: Varnish \
  Retry-After: 0 \
