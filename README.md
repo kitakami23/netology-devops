@@ -1,55 +1,59 @@
 ## 1
-chdir("/tmp")
+```
+[Unit]
+Description=Prometheus Node Exporter
+ 
+[Service]
+ExecStart=/usr/bin/node_exporter
+EnvironmentFile=/etc/default/node_exporter
 
+[Install]
+WantedBy=default.target
+```
 ## 2
-openat(AT_FDCWD, "/usr/share/misc/magic.mgc", O_RDONLY) = 3
+```
+node_cpu_seconds_total (system,user,iowait,idle)
+
+node_memory_MemFree_bytes
+node_memory_MemTotal_bytes
+node_memory_MemCached_bytes
+
+node_filesystem_size_bytes
+node_filesystem_avail_bytes
+node_disk_read_bytes_total
+node_disk_written_bytes_total
+
+node_network_receive_bytes_total
+node_network_transmit_bytes_total
+```
 
 ## 3
-```
-lsof -p 1702
-echo > /proc/1702/fd/3
-```
+![](./3.png?raw=true)
+
 ## 4
-Зомби ресурсов не потребляют, но блокируют записи в таблице процессов - могут забить весь пул доступных PID
+```
+dmesg | less
+```
+![](./4.png?raw=true)
 
 ## 5
-```
-root@ubnt-netology:~# opensnoop-bpfcc
-PID    COMM               FD ERR PATH
-530    irqbalance          6   0 /proc/interrupts
-530    irqbalance          6   0 /proc/stat
-530    irqbalance          6   0 /proc/irq/28/smp_affinity
-```
-## 6
-Системный вызов uname()
+![](./5.png?raw=true)
 
 ```
-Part of the utsname information is also accessible via /proc/sys/kernel/{ostype, hostname, osrelease, version, domainname}.
+ulimit -Hn — жесткий лимит максимального кол-ва открытых файловых дискрипторов, может быть установлен только root пользователем
+ulimit -Sn — мягкий лимит максимального кол-ва открытых файловых дискрипторов, может быть установлен пользователем на которого наложен лимит, но не больше чем жесткий лимит
 ``` 
+## 6
+
+
 
 ## 7
+Нагуглил про fork bomb \
+Функция {} вызывает саму себя, пропуская свой вывод через себя. Забивает процессорное время запросами
+
+![](./7.png?raw=true)
 
 ```
-&& - условный оператор 
-;  - разделитель последовательных команд
-
-test -d /123 && echo 321 - echo сработает только при успешном завершении команды test
-set -e прерывает сессию при любом ненулевом значении исполняемых команд в конвеере кроме последней
-&& совместно с set -e не имеет смысла - при ошибке выполнение команд остановится
-
+ulimit -u 20 
 ```
-
-## 8
-```
--e прерывает выполнение при ошибке любой команды кроме последней
--x выхлоп трейса 
--u не заданные параметры считаются как ошибки, с выводом в stderr текста ошибки
--o pipefail возвращает код возврата последовательности команд, ненулевой при последней команды или 0 для успешного выполнения команд
-```
-Эти ключи делают дебаг скрипта проще.
-
-## 9
-```
-S*(S,S+,Ss,Ssl,Ss+) - Процессы ожидающие завершения
-I*(I,I<) - фоновые(бездействующие) процессы ядра
-```
+Ограничим для текущего пользователя число процессов до 20
