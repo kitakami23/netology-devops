@@ -4,7 +4,7 @@
 Description=Prometheus Node Exporter
  
 [Service]
-ExecStart=/usr/bin/node_exporter
+ExecStart=/usr/bin/node_exporter $ARGS
 EnvironmentFile=/etc/default/node_exporter
 
 [Install]
@@ -45,7 +45,7 @@ ulimit -Sn — мягкий лимит максимального кол-ва о
 ``` 
 ## 6
 
-
+![](./6.png?raw=true)
 
 ## 7
 Нагуглил про fork bomb \
