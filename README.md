@@ -1,59 +1,38 @@
-## 1
-```
-[Unit]
-Description=Prometheus Node Exporter
- 
-[Service]
-ExecStart=/usr/bin/node_exporter $ARGS
-EnvironmentFile=/etc/default/node_exporter
-
-[Install]
-WantedBy=default.target
-```
 ## 2
-```
-node_cpu_seconds_total (system,user,iowait,idle)
-
-node_memory_MemFree_bytes
-node_memory_MemTotal_bytes
-node_memory_MemCached_bytes
-
-node_filesystem_size_bytes
-node_filesystem_avail_bytes
-node_disk_read_bytes_total
-node_disk_written_bytes_total
-
-node_network_receive_bytes_total
-node_network_transmit_bytes_total
-```
-
+Hardlink ссылается на один и тот же файл - соотв. имеет ту же inode \
+Права будут одинаковыми
+![](./2.png?raw=true)
 ## 3
 ![](./3.png?raw=true)
-
 ## 4
-```
-dmesg | less
-```
 ![](./4.png?raw=true)
-
 ## 5
 ![](./5.png?raw=true)
-
-```
-ulimit -Hn — жесткий лимит максимального кол-ва открытых файловых дискрипторов, может быть установлен только root пользователем
-ulimit -Sn — мягкий лимит максимального кол-ва открытых файловых дискрипторов, может быть установлен пользователем на которого наложен лимит, но не больше чем жесткий лимит
-``` 
 ## 6
-
 ![](./6.png?raw=true)
-
 ## 7
-Нагуглил про fork bomb \
-Функция {} вызывает саму себя, пропуская свой вывод через себя. Забивает процессорное время запросами
-
 ![](./7.png?raw=true)
-
-```
-ulimit -u 20 
-```
-Ограничим для текущего пользователя число процессов до 20
+## 8
+![](./8.png?raw=true)
+## 9
+![](./9.png?raw=true)
+## 10
+![](./10.png?raw=true)
+## 11
+![](./11.png?raw=true)
+## 12
+![](./12.png?raw=true)
+## 13
+![](./13.png?raw=true)
+## 14
+![](./14.png?raw=true)
+## 15
+![](./15.png?raw=true)
+## 16
+![](./16.png?raw=true)
+## 17
+![](./17.png?raw=true)
+## 18
+![](./18.png?raw=true)
+## 19
+![](./19.png?raw=true)
