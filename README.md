@@ -2,7 +2,7 @@
 ![](./1.png?raw=true)
 ## 2
 Google Authenticator блочит создание скриншота
-![](./2.jpg?raw=true
+![](./2.jpg?raw=true)
 ## 3
 ![](./3-1.png?raw=true)
 ![](./3-2.png?raw=true)
