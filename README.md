@@ -1,25 +1,66 @@
 ## 1
+```
+c = "a+b" - так как объявили текст (без $) а не переменные
+d = "1+2" - shell подставил  значения переменных, но не выполнил арифметическую операцию так как по умолчанию это строки
+e = "3"   - так как теперь за счет скобок мы дали команду на выполнение арифметической операции со значениями переменных
+```
 ![](./1.png?raw=true)
+
 ## 2
-Google Authenticator блочит создание скриншота \
-![](./2.jpg?raw=true)
+Не хватает закрывающей скобки “)” в месте “while ((1==1)” \
+Следует добавить проверку для завершения скрипта:
+```
+#!/bin/bash
+while ((1==1))
+do
+	curl https://localhost:4757
+	if (($? != 0))
+	then
+		date >> curl.log
+	else exit
+	fi
+done
+```
+
 ## 3
-![](./3-1.png?raw=true)
-![](./3-2.png?raw=true)
-![](./3-3.png?raw=true)
-![](./3-4.png?raw=true)
+```
+#!/bin/bash
+hosts=(192.168.0.1 173.194.222.113 87.250.250.24)
+for i in {1..5}
+do
+date >>hosts.log
+		for h in ${hosts[@]}
+		do
+    			curl -Is --connect-timeout 5 $h:80 >/dev/null
+    			echo "	check" $h status=$? >>hosts.log
+		done
+done
+```
+![](./3.png?raw=true)
+
 ## 4
-Для проверки использовал сайт 
+
 ```
-testtls.com
+#!/bin/bash	
+hosts=(192.168.0.1 173.194.222.113 87.250.250.24)
+unreach=0
+
+while (($unreach == 0))
+do
+date >> hosts.log
+
+		for h in ${hosts[@]}
+		do  
+    			curl -Is --connect-timeout 5 $h:80 >/dev/null
+    			unreach=$?
+    			if (($unreach !=0))
+    			then
+   	 			date >> error.log
+            				echo "  HOST unreacheble" $h >> error.log
+    			else
+            				echo "  check" $h status=$? >>hosts.log
+    			fi
+		done
+done
 ```
-![](./4-1.png?raw=true)
-![](./4-2.png?raw=true)
-## 5
-Содержимое id_ecdsa.pub копируем на сервер под нужного пользователя в .ssh/authorized_keys \
-![](./5.png?raw=true)
-## 6
-![](./6.png?raw=true)
-## 7
-![](./7-1.png?raw=true)
-![](./7-2.png?raw=true)
+![](./4.png?raw=true)
