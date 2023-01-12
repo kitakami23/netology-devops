@@ -1,8 +1,6 @@
 ## 1
-![](./1.png?raw=true)
+![](./assets/1.png)
 
 ## 2
-![](./2.png?raw=true)
-
-## 3
-![](./3.png?raw=true)
+1. Packer
+2. [Конфигурация](./terraform/)
