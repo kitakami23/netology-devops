@@ -1,11 +1,11 @@
 ## 1
-![Compose](./src/docker-compose.yaml)
+[Compose](./src/docker-compose.yaml)
 
 ## 2
 ![](./assets/2.png)
 
 ## 3
-![Запросы](./src/insert.sql)
+[Запросы](./src/insert.sql)
 ![](./assets/3.png)
 
 ## 4
