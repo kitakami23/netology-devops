@@ -21,7 +21,9 @@
  
 ## 6
 Бекап делал с помощью
-'pg_dump -h 127.0.0.1 -p 5432 --format custom --blobs -U test-admin-user -d test_db -v -f test_db.dump'
+```
+pg_dump -h 127.0.0.1 -p 5432 --format custom --blobs -U test-admin-user -d test_db -v -f test_db.dump
+```
 После создания нового контейнера инит базы с нуля - создание бд, пользователей
 ![](./assets/6.png)
 
