@@ -6,6 +6,7 @@
 
 ## 3
 [Запросы](./src/insert.sql)
+
 ![](./assets/3.png)
 
 ## 4
