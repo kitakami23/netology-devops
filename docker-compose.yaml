@@ -1,0 +1,18 @@
+version: '3.9'
+
+volumes:
+  data: {}
+  backup: {}
+
+services:
+  postgres:
+    container_name: postgresql-bkp
+    image: postgres:12
+    restart: always
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+    ports:
+      - '5433:5432'
+    volumes:
+      - ~/Projects/Netology/postgres/backup:/var/lib/postgresql/backup
