@@ -2,19 +2,18 @@ version: '3.9'
 
 volumes:
   data: {}
-  backup: {}
 
 services:
-  postgres:
-    container_name: postgresql
-    image: postgres:12
+  mysql:
+    container_name: mysql
+    image: mysql:8
     restart: always
     environment:
-      POSTGRES_USER: "postgres"
-      POSTGRES_PASSWORD: "postgres"
+      MYSQL_DATABASE: 'test_db'
+      MYSQL_ROOT_PASSWORD: 'test'
     ports:
-      - '5432:5432'
+      - '3306:3306'
     volumes:
-      - ~/Projects/Netology/postgres/data:/var/lib/postgresql/data
-      - ~/Projects/Netology/postgres/backup:/var/lib/postgresql/backup
-      - ~/Projects/Netology/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ~/Projects/Netology/mysql/data:/var/lib/mysql
+      - ~/Projects/Netology/mysql/test_dump.sql:/docker-entrypoint-initdb.d/init.sql
+      - ~/Projects/Netology/mysql/my.cnf:/etc/mysql/my.cnf
