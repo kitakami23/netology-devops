@@ -1,9 +1,0 @@
-SET profiling = 1;
-USE test_db;
-SELECT TABLE_NAME, ENGINE FROM information_schema.TABLES WHERE TABLE_SCHEMA = 'test_db';
-SELECT COUNT(*) FROM orders WHERE price > 300;
-ALTER TABLE orders ENGINE = 'MyISAM';
-SELECT COUNT(*) FROM orders WHERE price > 300;
-ALTER TABLE orders ENGINE = 'InnoDB';
-SHOW PROFILES;
-SHOW PROFILE FOR QUERY 5;
