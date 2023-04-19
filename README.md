@@ -1,4 +1,8 @@
-1. Помимо базовых метрик ()
-2. Сделать сноски с описанием к виджетам/переименовать заголовок виджетов на понятный манагеру язык. С клиентом попробовать пообщаться и выделить ключевые метрики SLA, сделать дашборд с уровнем доступности сервиса/ошибок/количества пользователей в системе и прочее
-3. Не совсем понимаю про финансирование. Подселить рядом с приложением loki с promtail - много ресурсов не съест. В promtail настроить условный греп на ошибки, на них натравить alertmanager. Дальше все это дело отправлять либо на почту, либо в телегу. В случае если прям совсем нельзя-нельзя - остается скриптом покрывать проверку логов на ошибки и делать рассылку. 
-4. В запросе не учитываются 100-е и 300-е коды
+## 1
+
+- resources: https://github.com/hashicorp/terraform-provider-aws/blob/3f454457baf318faae5cc61dcf948c6b7a25575a/internal/provider/provider.go#L871
+- data_sources: https://github.com/hashicorp/terraform-provider-aws/blob/3f454457baf318faae5cc61dcf948c6b7a25575a/internal/provider/provider.go#L412
+
+- Параметр name конфликтует с name_prefix https://github.com/hashicorp/terraform-provider-aws/blob/3f454457baf318faae5cc61dcf948c6b7a25575a/internal/service/sqs/queue.go#L82
+- Максимальная длина имени указана в условии https://github.com/hashicorp/terraform-provider-aws/blob/3f454457baf318faae5cc61dcf948c6b7a25575a/internal/service/sqs/queue.go#L424 и равна 80 символам
+- Регулярное выражение для имени `^[a-zA-Z0-9_-]{1,75}\.fifo$` или `^[a-zA-Z0-9_-]{1,80}$`
